@@ -10,7 +10,7 @@ function onFormSubmit( ) {
 }
 
 function readFormData() {
-    var formData = {};
+    var formData = new Object();
     formData["fullName"] = document.getElementById("fullName").value;
     formData["empCode"] = document.getElementById("empCode").value;
     formData["salary"] = document.getElementById("salary").value;
