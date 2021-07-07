@@ -5,9 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="index.html">show daat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <td>
+                    <form onsubmit="event.preventDefault();onFormSubmit();" action="" autocomplete="off">
+                        <div >
+                            <label for="fullName">Full Name:</label><!--<label class="validation-error hide" id="nameValid">This field is required</label> -->
+                            <input type="text" name="fullName" id="fullName" required>
+                        </div>
+                        <div >
+                            <label for="empCode">Emp Code:</label>
+                            <input type="text" name="empCode" id="empCode" required>
+                        </div>
+                        <div >
+                            <label for="salary">Salary:</label>
+                            <input type="number" name="salary" id="salary" required>
+                        </div>
+                        <div >
+                            <label for="city">City:</label>
+                            <input type="text" name="city" id="city" required>
+                        </div>
+                        <div >
+                            <input type="submit" value="Submit" id="submit">
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </main>
+    <script src="home.js"></script>    
 </body>
 </html>
