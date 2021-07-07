@@ -1,23 +1,33 @@
 var selectedRow =null;
-function onFormSubmit( ) {
-    var formData = readFormData();
-    if(selectedRow == null)
+// function onFormSubmit( ) {
+//     var formData = readFormData();
+//     if(selectedRow == null)
+//         insertNewRecord(formData);
+//     else
+//         updateData(formData);
+//     resetForm();
+
+// }
+
+// function readFormData() {
+//     var formData = new Object();
+//     formData.fullName = document.getElementById("fullName").value;
+//     formData.empCode = document.getElementById("empCode").value;
+//     formData.salary = document.getElementById("salary").value;
+//     formData.city = document.getElementById("city").value;
+//     return formData;
+// }
+
+window.addEventListener('load', function (){
+     
+    var formData = JSON.parse(sessionStorage.getItem("data"));
+    console.log(formData);
+    if (selectedRow == null) 
         insertNewRecord(formData);
     else
-        updateData(formData);
-    resetForm();
-
-}
-
-function readFormData() {
-    var formData = new Object();
-    formData.fullName = document.getElementById("fullName").value;
-    formData.empCode = document.getElementById("empCode").value;
-    formData.salary = document.getElementById("salary").value;
-    formData.city = document.getElementById("city").value;
-    return formData;
-}
-
+        updateData(formData);    
+    
+});
 function insertNewRecord(data) {
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
@@ -39,13 +49,7 @@ function insertNewRecord(data) {
 
 }
 
-function resetForm() {
-    document.getElementById("fullName").value = "";
-    document.getElementById("empCode").value = "";
-    document.getElementById("salary").value = "";
-    document.getElementById("city").value = "";
-    selectedRow = null;
-}
+
 
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
@@ -67,6 +71,6 @@ function onDelete(td) {
         row = td.parentElement.parentElement;
         
         document.getElementById("employeeList").deleteRow(row.rowIndex);
-        resetForm();    
+        //resetForm();    
     }
 }
